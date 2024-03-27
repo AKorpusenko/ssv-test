@@ -37,9 +37,13 @@ jobs:
           printenv
           
       - name: Tag Docker Image
+        env:
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           docker tag ssv-node-test:${IMAGE_TAG} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test:${IMAGE_TAG}
           
       - name: Push Docker Image to ECR
+        env:
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test:${IMAGE_TAG}
