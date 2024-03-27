@@ -31,7 +31,8 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t ssv-node:$IMAGE_TAG .
+          echo "GitHub Workflow SHA: $IMAGE_TAG"
+          #docker build -t ssv-node:$IMAGE_TAG .
           
       - name: Tag Docker Image
         run: |
