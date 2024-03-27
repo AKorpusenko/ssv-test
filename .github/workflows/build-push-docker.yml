@@ -29,8 +29,9 @@ jobs:
           
       - name: Get the latest commit hash
         id: get-commit-hash
-        run: echo "::set-output name=commit_hash::$(git rev-parse --short HEAD)"
-                  
+        # run: echo "::set-output name=commit_hash::$(git rev-parse --short HEAD)"
+        run: echo "commit_hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV && printenv |grep GITHUB
+ 
       - name: Build Docker Image
         env:
           IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit_hash }}
