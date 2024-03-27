@@ -1,0 +1,44 @@
+name: Build and Push SSV Docker Image to AWS ECR
+
+on:
+  push:
+    branches:
+      - testing-argo-ci-cd # specify the branch you want to trigger the workflow on
+
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID_ECR }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY_ECR }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+        
+      - name: Login to AWS ECR
+        id: login-ecr
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+          
+      - name: Get the latest commit hash
+        id: get-commit-hash
+        run: echo "::set-output name=commit_hash::$(git rev-parse --short HEAD)"
+                  
+      - name: Build Docker Image
+        env:
+          IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit_hash }}
+        run: |
+          docker build -t ssv-node:$IMAGE_TAG .
+          
+      - name: Tag Docker Image
+        run: |
+          docker tag ssv-node:$IMAGE_TAG ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test/ssv-node:$IMAGE_TAG
+          
+      - name: Push Docker Image to ECR
+        run: |
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test/ssv-node:$IMAGE_TAG
