@@ -36,7 +36,7 @@ jobs:
           
       - name: Tag Docker Image
         run: |
-          docker tag ssv-node:${IMAGE_TAG} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test:${IMAGE_TAG}
+          docker tag ssv-node-test:${IMAGE_TAG} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/ssv-node-test:${IMAGE_TAG}
           
       - name: Push Docker Image to ECR
         run: |
