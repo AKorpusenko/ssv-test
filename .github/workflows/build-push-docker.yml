@@ -27,14 +27,9 @@ jobs:
         run: |
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
           
-      - name: Get the latest commit hash
-        id: get-commit-hash
-        # run: echo "::set-output name=commit_hash::$(git rev-parse --short HEAD)"
-        run: echo "commit_hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV && printenv |grep GITHUB
- 
       - name: Build Docker Image
         env:
-          IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit_hash }}
+          IMAGE_TAG: $GITHUB_WORKFLOW_SHA
         run: |
           docker build -t ssv-node:$IMAGE_TAG .
           
