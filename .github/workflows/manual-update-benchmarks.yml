@@ -1,14 +1,18 @@
-name: Update benchmarks in repo
+name: Optional Benchmark Update on PR
 
 on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 jobs:
-  update-benchmarks:
+  optional-benchmark-update:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Ensures the PR's head is checked out
 
       - name: Setup make
         run: sudo apt-get update && sudo apt-get install make
@@ -22,5 +26,5 @@ jobs:
         run: go mod tidy
 
       - name: Update benchmarks
-        run: |
-          make update-benchmarks
+        if: github.event_name == 'workflow_dispatch'
+        run: make update-benchmarks
