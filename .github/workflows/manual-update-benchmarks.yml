@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }} # Ensures the PR's head is checked out
 
@@ -28,3 +28,6 @@ jobs:
       - name: Update benchmarks
         if: github.event_name == 'workflow_dispatch'
         run: make update-benchmarks
+      
+      - name: Update repo
+        uses: stefanzweifel/git-auto-commit-action@v5
