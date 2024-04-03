@@ -77,14 +77,9 @@ func BenchmarkVerifyRSASignature(b *testing.B) {
 	hash := sha256.Sum256(encodedMsg)
 	privateKey, err := rsa.GenerateKey(crand.Reader, 2048)
 	require.NoError(b, err)
+	pubkey := privateKey.Public().(*rsa.PublicKey)
 
-	_, skByte, err := rsaencryption.GenerateKeys()
-	require.NoError(b, err)
-
-	sk, err := rsaencryption.PemToPrivateKey(skByte)
-	require.NoError(b, err)
-
-	pubKey, err := rsaencryption.ExtractPublicKey(&sk.PublicKey)
+	pubKey, err := rsaencryption.ExtractPublicKey(pubkey)
 	require.NoError(b, err)
 
 	od := &registrystorage.OperatorData{
