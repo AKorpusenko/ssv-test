@@ -19,17 +19,19 @@ type privateKeyWithRWMutex struct {
 
 func (priv *privateKeyWithRWMutex) checkCachePrivkey() (*openssl.PrivateKeyRSA, error) {
 	priv.mu.RLock()
-	defer priv.mu.RUnlock()
 	if priv.cachedPrivKey != nil {
+		defer priv.mu.RUnlock()
 		return priv.cachedPrivKey, nil
 	}
+	priv.mu.RUnlock()
+
 	opriv, err := rsaPrivateKeyToOpenSSL(priv.privKey)
 	if err != nil {
 		return nil, err
 	}
 	priv.mu.Lock()
+	defer priv.mu.Unlock()
 	priv.cachedPrivKey = opriv
-	priv.mu.Unlock()
 
 	return opriv, nil
 }
