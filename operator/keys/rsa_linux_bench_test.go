@@ -11,21 +11,6 @@ import (
 	"testing"
 )
 
-func BenchmarkPrivKeyCache(b *testing.B) {
-	key, err := rsa.GenerateKey(rand.Reader, 2048)
-	require.NoError(b, err)
-
-	pk := &privateKey{key, nil, sync.Once{}}
-
-	b.RunParallel(func(pb *testing.PB) {
-		for pb.Next() {
-			key, err := checkCachePrivkey(pk)
-			require.NoError(b, err)
-			require.NotNil(b, key)
-		}
-	})
-}
-
 type privateKeyWithRWMutex struct {
 	privKey       *rsa.PrivateKey
 	cachedPrivKey *openssl.PrivateKeyRSA
@@ -49,7 +34,7 @@ func (priv *privateKeyWithRWMutex) checkCachePrivkey() (*openssl.PrivateKeyRSA, 
 	return opriv, nil
 }
 
-func BenchmarkPrivKeyCacheWithRWMutex(b *testing.B) {
+func BenchmarkPrivKeyCacheWithSyncRWMutex(b *testing.B) {
 	key, err := rsa.GenerateKey(rand.Reader, 2048)
 	require.NoError(b, err)
 
@@ -58,6 +43,21 @@ func BenchmarkPrivKeyCacheWithRWMutex(b *testing.B) {
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			key, err := pk.checkCachePrivkey()
+			require.NoError(b, err)
+			require.NotNil(b, key)
+		}
+	})
+}
+
+func BenchmarkPrivKeyCacheSyncOnce(b *testing.B) {
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	require.NoError(b, err)
+
+	pk := &privateKey{key, nil, sync.Once{}}
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			key, err := checkCachePrivkey(pk)
 			require.NoError(b, err)
 			require.NotNil(b, key)
 		}
