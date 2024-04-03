@@ -1,212 +1,26 @@
-SIGQUIT: quit
-PC=0x474241 m=0 sigcode=0
-
-goroutine 0 [idle]:
-runtime.futex()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/sys_linux_amd64.s:554 +0x21 fp=0x7fff44ed4928 sp=0x7fff44ed4920 pc=0x474241
-runtime.futexsleep(0x473e33?, 0x44ed49a8?, 0x44cdcc?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/os_linux.go:69 +0x36 fp=0x7fff44ed4978 sp=0x7fff44ed4928 pc=0x439c16
-runtime.notesleep(0x80f9c8)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/lock_futex.go:160 +0x87 fp=0x7fff44ed49b0 sp=0x7fff44ed4978 pc=0x413007
-runtime.mPark(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:1533
-runtime.stopm()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:2337 +0x8c fp=0x7fff44ed49e0 sp=0x7fff44ed49b0 pc=0x44480c
-runtime.findRunnable()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:3027 +0xabc fp=0x7fff44ed4ae8 sp=0x7fff44ed49e0 pc=0x4460bc
-runtime.schedule()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:3380 +0xb1 fp=0x7fff44ed4b20 sp=0x7fff44ed4ae8 pc=0x446ef1
-runtime.park_m(0xc000007a00?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:3531 +0x12d fp=0x7fff44ed4b50 sp=0x7fff44ed4b20 pc=0x44740d
-runtime.mcall()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:452 +0x43 fp=0x7fff44ed4b60 sp=0x7fff44ed4b50 pc=0x470123
-
-goroutine 1 [chan receive, 10 minutes]:
-runtime.gopark(0xc0000e18b0?, 0x0?, 0x4?, 0x0?, 0xc0000e18d8?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc0000e1858 sp=0xc0000e1838 pc=0x440936
-runtime.chanrecv(0xc00008e180, 0x0, 0x1)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/chan.go:583 +0x49d fp=0xc0000e18e8 sp=0xc0000e1858 pc=0x40de5d
-runtime.chanrecv1(0x41409e?, 0x7ff15e08c368?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/chan.go:442 +0x18 fp=0xc0000e1910 sp=0xc0000e18e8 pc=0x40d998
-testing.(*B).run1(0xc0000aea00)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:235 +0xb2 fp=0xc0000e19f0 sp=0xc0000e1910 pc=0x4d7992
-testing.(*B).Run(0xc0000ae780, {0x653b36?, 0x0?}, 0x675f80)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:700 +0x4e5 fp=0xc0000e1af0 sp=0xc0000e19f0 pc=0x4da625
-testing.runBenchmarks.func1(0xc0000ae780?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:561 +0x45 fp=0xc0000e1b40 sp=0xc0000e1af0 pc=0x4d9685
-testing.(*B).runN(0xc0000ae780, 0x1)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:193 +0x102 fp=0xc0000e1bb8 sp=0xc0000e1b40 pc=0x4d7762
-testing.runBenchmarks({0x653c32, 0x24}, 0x0?, {0x7d5340, 0x2, 0x100c0000b0d58?})
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:570 +0x638 fp=0xc0000e1cb8 sp=0xc0000e1bb8 pc=0x4d95b8
-testing.(*M).Run(0xc0000b7040)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/testing.go:1923 +0x971 fp=0xc0000e1f00 sp=0xc0000e1cb8 pc=0x4e5b51
-main.main()
-	_testmain.go:73 +0x1aa fp=0xc0000e1f80 sp=0xc0000e1f00 pc=0x5eb08a
-runtime.main()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:250 +0x207 fp=0xc0000e1fe0 sp=0xc0000e1f80 pc=0x440507
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000e1fe8 sp=0xc0000e1fe0 pc=0x472361
-
-goroutine 2 [force gc (idle), 2 minutes]:
-runtime.gopark(0xc53e338ca9?, 0x0?, 0x0?, 0x0?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000042fb0 sp=0xc000042f90 pc=0x440936
-runtime.goparkunlock(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:387
-runtime.forcegchelper()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:305 +0xb0 fp=0xc000042fe0 sp=0xc000042fb0 pc=0x440770
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000042fe8 sp=0xc000042fe0 pc=0x472361
-created by runtime.init.6
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:293 +0x25
-
-goroutine 3 [GC sweep wait]:
-runtime.gopark(0x80ee01?, 0x0?, 0x0?, 0x0?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000043780 sp=0xc000043760 pc=0x440936
-runtime.goparkunlock(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:387
-runtime.bgsweep(0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgcsweep.go:319 +0xde fp=0xc0000437c8 sp=0xc000043780 pc=0x42aefe
-runtime.gcenable.func1()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:178 +0x26 fp=0xc0000437e0 sp=0xc0000437c8 pc=0x420166
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000437e8 sp=0xc0000437e0 pc=0x472361
-created by runtime.gcenable
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:178 +0x6b
-
-goroutine 4 [GC scavenge wait, 2 minutes]:
-runtime.gopark(0x9b519ac0bb?, 0x1facd09?, 0x0?, 0x0?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000043f70 sp=0xc000043f50 pc=0x440936
-runtime.goparkunlock(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:387
-runtime.(*scavengerState).park(0x80f120)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgcscavenge.go:400 +0x53 fp=0xc000043fa0 sp=0xc000043f70 pc=0x428dd3
-runtime.bgscavenge(0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgcscavenge.go:633 +0x65 fp=0xc000043fc8 sp=0xc000043fa0 pc=0x4293c5
-runtime.gcenable.func2()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:179 +0x26 fp=0xc000043fe0 sp=0xc000043fc8 pc=0x420106
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000043fe8 sp=0xc000043fe0 pc=0x472361
-created by runtime.gcenable
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:179 +0xaa
-
-goroutine 18 [finalizer wait, 10 minutes]:
-runtime.gopark(0x0?, 0x675fe0?, 0xf0?, 0xc0?, 0x1000000010?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000042628 sp=0xc000042608 pc=0x440936
-runtime.runfinq()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mfinal.go:193 +0x107 fp=0xc0000427e0 sp=0xc000042628 pc=0x41f127
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000427e8 sp=0xc0000427e0 pc=0x472361
-created by runtime.createfing
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mfinal.go:163 +0x45
-
-goroutine 126 [semacquire, 10 minutes]:
-runtime.gopark(0x3?, 0x22?, 0xe0?, 0x24?, 0x30?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000050d90 sp=0xc000050d70 pc=0x440936
-runtime.goparkunlock(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:387
-runtime.semacquire1(0xc0000ac1a8, 0x30?, 0x1, 0x0, 0xb1?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/sema.go:160 +0x20f fp=0xc000050df8 sp=0xc000050d90 pc=0x451fef
-sync.runtime_Semacquire(0xc00009cff0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/sema.go:62 +0x27 fp=0xc000050e30 sp=0xc000050df8 pc=0x46e687
-sync.(*WaitGroup).Wait(0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/sync/waitgroup.go:116 +0x4b fp=0xc000050e58 sp=0xc000050e30 pc=0x47a2cb
-testing.(*B).RunParallel(0xc0000aea00, 0xc0000aa150)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:818 +0x1c9 fp=0xc000050ed0 sp=0xc000050e58 pc=0x4dade9
-github.com/bloxapp/ssv/operator/keys.BenchmarkPrivKeyCacheWithSyncRWMutex(0xc0000aea00)
-	/home/runner/work/ssv-test/ssv-test/operator/keys/rsa_linux_bench_test.go:43 +0xf8 fp=0xc000050f28 sp=0xc000050ed0 pc=0x5e8d78
-testing.(*B).runN(0xc0000aea00, 0x1)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:193 +0x102 fp=0xc000050fa0 sp=0xc000050f28 pc=0x4d7762
-testing.(*B).run1.func1()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:233 +0x59 fp=0xc000050fe0 sp=0xc000050fa0 pc=0x4d7df9
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000050fe8 sp=0xc000050fe0 pc=0x472361
-created by testing.(*B).run1
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:226 +0x9c
-
-goroutine 21 [GC worker (idle), 10 minutes]:
-runtime.gopark(0x397e8335e5?, 0x3?, 0xab?, 0x69?, 0x4e3f4b?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc00003e750 sp=0xc00003e730 pc=0x440936
-runtime.gcBgMarkWorker()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1275 +0xf1 fp=0xc00003e7e0 sp=0xc00003e750 pc=0x421ed1
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00003e7e8 sp=0xc00003e7e0 pc=0x472361
-created by runtime.gcBgMarkStartWorkers
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1199 +0x25
-
-goroutine 5 [GC worker (idle), 2 minutes]:
-runtime.gopark(0xc53e37a2e8?, 0x3?, 0x89?, 0xcf?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000044750 sp=0xc000044730 pc=0x440936
-runtime.gcBgMarkWorker()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1275 +0xf1 fp=0xc0000447e0 sp=0xc000044750 pc=0x421ed1
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000447e8 sp=0xc0000447e0 pc=0x472361
-created by runtime.gcBgMarkStartWorkers
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1199 +0x25
-
-goroutine 6 [GC worker (idle), 10 minutes]:
-runtime.gopark(0x397e8276ef?, 0x3?, 0xa1?, 0x5e?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000044f50 sp=0xc000044f30 pc=0x440936
-runtime.gcBgMarkWorker()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1275 +0xf1 fp=0xc000044fe0 sp=0xc000044f50 pc=0x421ed1
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000044fe8 sp=0xc000044fe0 pc=0x472361
-created by runtime.gcBgMarkStartWorkers
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1199 +0x25
-
-goroutine 34 [GC worker (idle), 10 minutes]:
-runtime.gopark(0x397e827656?, 0x3?, 0xc?, 0x51?, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000486750 sp=0xc000486730 pc=0x440936
-runtime.gcBgMarkWorker()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1275 +0xf1 fp=0xc0004867e0 sp=0xc000486750 pc=0x421ed1
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0004867e8 sp=0xc0004867e0 pc=0x472361
-created by runtime.gcBgMarkStartWorkers
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/mgc.go:1199 +0x25
-
-goroutine 106 [sync.RWMutex.Lock, 10 minutes]:
-runtime.gopark(0x20?, 0x24?, 0x40?, 0x25?, 0x1?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:381 +0xd6 fp=0xc000057de0 sp=0xc000057dc0 pc=0x440936
-runtime.goparkunlock(...)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/proc.go:387
-runtime.semacquire1(0xc00009cee8, 0x0?, 0x3, 0x0, 0x0?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/sema.go:160 +0x20f fp=0xc000057e48 sp=0xc000057de0 pc=0x451fef
-sync.runtime_SemacquireRWMutex(0x0?, 0xb0?, 0x1?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/sema.go:87 +0x26 fp=0xc000057e80 sp=0xc000057e48 pc=0x46e866
-sync.(*RWMutex).Lock(0xc00007e080?)
-	/opt/hostedtoolcache/go/1.20.14/x64/src/sync/rwmutex.go:152 +0x71 fp=0xc000057eb0 sp=0xc000057e80 pc=0x47a011
-github.com/bloxapp/ssv/operator/keys.(*privateKeyWithRWMutex).checkCachePrivkey(0xc00009ced0)
-	/home/runner/work/ssv-test/ssv-test/operator/keys/rsa_linux_bench_test.go:30 +0xbd fp=0xc000057f20 sp=0xc000057eb0 pc=0x5e8afd
-github.com/bloxapp/ssv/operator/keys.BenchmarkPrivKeyCacheWithSyncRWMutex.func1(0xc0000cc200)
-	/home/runner/work/ssv-test/ssv-test/operator/keys/rsa_linux_bench_test.go:45 +0x3d fp=0xc000057f80 sp=0xc000057f20 pc=0x5e8ddd
-testing.(*B).RunParallel.func1()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:815 +0xcb fp=0xc000057fe0 sp=0xc000057f80 pc=0x4daf4b
-runtime.goexit()
-	/opt/hostedtoolcache/go/1.20.14/x64/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000057fe8 sp=0xc000057fe0 pc=0x472361
-created by testing.(*B).RunParallel
-	/opt/hostedtoolcache/go/1.20.14/x64/src/testing/benchmark.go:808 +0x105
-
-rax    0xca
-rbx    0x0
-rcx    0x474243
-rdx    0x0
-rdi    0x80f9c8
-rsi    0x80
-rbp    0x7fff44ed4968
-rsp    0x7fff44ed4920
-r8     0x0
-r9     0x0
-r10    0x0
-r11    0x286
-r12    0x29
-r13    0x1
-r14    0x80f2a0
-r15    0x29
-rip    0x474241
-rflags 0x286
-cs     0x33
-fs     0x0
-gs     0x0
-*** Test killed with quit: ran too long (11m0s).
-exit status 2
-FAIL	github.com/bloxapp/ssv/operator/keys	660.005s
-FAIL
+goos: linux
+goarch: amd64
+pkg: github.com/bloxapp/ssv/operator/keys
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1417422	       867.0 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1257836	       867.1 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1348384	       881.2 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1399282	       819.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1148542	       880.0 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1393994	       856.4 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1238743	       926.6 ns/op	       3 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1426958	       844.9 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1217131	       846.0 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	 1441422	       799.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1285124	       849.2 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1213201	       867.7 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1124966	      1282 ns/op	      11 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1438590	       869.6 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1476470	       841.1 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1258260	       842.7 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1304726	       817.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1436894	       820.6 ns/op	       1 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1083093	       940.6 ns/op	       3 B/op	       0 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	 1340496	       824.1 ns/op	       1 B/op	       0 allocs/op
+PASS
+ok  	github.com/bloxapp/ssv/operator/keys	70.229s
