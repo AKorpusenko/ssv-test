@@ -78,7 +78,13 @@ func BenchmarkVerifyRSASignature(b *testing.B) {
 	privateKey, err := rsa.GenerateKey(crand.Reader, 2048)
 	require.NoError(b, err)
 
-	pubKey, err := rsaencryption.ExtractPublicKey(privateKey)
+	_, skByte, err := rsaencryption.GenerateKeys()
+	require.NoError(b, err)
+
+	sk, err := rsaencryption.PemToPrivateKey(skByte)
+	require.NoError(b, err)
+
+	pubKey, err := rsaencryption.ExtractPublicKey(&sk.PublicKey)
 	require.NoError(b, err)
 
 	od := &registrystorage.OperatorData{
@@ -113,7 +119,7 @@ func BenchmarkVerifyRSASignature(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		err := mv.verifyRSASignature(messageData, operatorIDX, signature)
+		err := mv.verifySignature(messageData, operatorIDX, signature)
 		require.NoError(b, err)
 	}
 }
