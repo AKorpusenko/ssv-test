@@ -2,35 +2,35 @@ goos: linux
 goarch: amd64
 pkg: github.com/bloxapp/ssv/operator/keys
 cpu: AMD EPYC 7763 64-Core Processor                
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     770	   1586527 ns/op	   54797 B/op	    1038 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     694	   1625345 ns/op	   55767 B/op	    1042 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     745	   1652690 ns/op	   54800 B/op	    1037 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     626	   1776866 ns/op	   57448 B/op	    1042 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     747	   1756406 ns/op	   58546 B/op	    1046 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     736	   1789740 ns/op	   57468 B/op	    1042 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     754	   1832489 ns/op	   58804 B/op	    1046 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     724	   1575462 ns/op	   54228 B/op	    1036 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     704	   1476241 ns/op	   51949 B/op	    1028 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     686	   1469966 ns/op	   52479 B/op	    1032 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     819	   1510537 ns/op	   36170 B/op	    1027 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     667	   1518553 ns/op	   35068 B/op	    1021 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     614	   1739558 ns/op	   41062 B/op	    1035 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     702	   1556582 ns/op	   35153 B/op	    1022 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     616	   1784866 ns/op	   42854 B/op	    1043 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     734	   1595815 ns/op	   37470 B/op	    1027 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     753	   1596984 ns/op	   38933 B/op	    1033 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     645	   1599048 ns/op	   37668 B/op	    1030 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     741	   1576493 ns/op	   37132 B/op	    1028 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     573	   1905239 ns/op	   44667 B/op	    1045 allocs/op
-Benchmark_A-4                            	    5276	    208054 ns/op	   40632 B/op	    2002 allocs/op
-Benchmark_A-4                            	    5443	    206457 ns/op	   40689 B/op	    2002 allocs/op
-Benchmark_A-4                            	    5484	    200201 ns/op	   40554 B/op	    2002 allocs/op
-Benchmark_A-4                            	    6458	    197727 ns/op	   40575 B/op	    2002 allocs/op
-Benchmark_A-4                            	    5961	    187081 ns/op	   40325 B/op	    2001 allocs/op
-Benchmark_A-4                            	    5536	    215095 ns/op	   40942 B/op	    2003 allocs/op
-Benchmark_A-4                            	    6562	    190984 ns/op	   40380 B/op	    2001 allocs/op
-Benchmark_A-4                            	    6003	    193973 ns/op	   40350 B/op	    2001 allocs/op
-Benchmark_A-4                            	    5694	    217952 ns/op	   40962 B/op	    2003 allocs/op
-Benchmark_A-4                            	    5528	    187210 ns/op	   40313 B/op	    2001 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     680	   1495857 ns/op	   53688 B/op	    1034 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     670	   1505873 ns/op	   53425 B/op	    1033 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     688	   1731867 ns/op	   58720 B/op	    1045 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     680	   1557381 ns/op	   54722 B/op	    1037 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     669	   1527149 ns/op	   53687 B/op	    1031 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     784	   1623376 ns/op	   56474 B/op	    1042 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     781	   1486823 ns/op	   53127 B/op	    1031 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     800	   1492788 ns/op	   53024 B/op	    1030 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     854	   1620408 ns/op	   56159 B/op	    1038 allocs/op
+BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     736	   1409626 ns/op	   51644 B/op	    1029 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     775	   1555436 ns/op	   38615 B/op	    1031 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     758	   1633808 ns/op	   40312 B/op	    1034 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     849	   1527529 ns/op	   37946 B/op	    1029 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     742	   1777792 ns/op	   43660 B/op	    1043 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     766	   1393612 ns/op	   34761 B/op	    1021 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     694	   1632902 ns/op	   39777 B/op	    1034 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     819	   1413879 ns/op	   35491 B/op	    1024 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     812	   1416401 ns/op	   35642 B/op	    1024 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     690	   1477559 ns/op	   36798 B/op	    1027 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4          	     790	   1371310 ns/op	   34578 B/op	    1022 allocs/op
+Benchmark_A-4                            	    6826	    180116 ns/op	   40245 B/op	    2001 allocs/op
+Benchmark_A-4                            	    6633	    177965 ns/op	   40207 B/op	    2001 allocs/op
+Benchmark_A-4                            	    5986	    213124 ns/op	   41001 B/op	    2003 allocs/op
+Benchmark_A-4                            	    6495	    175962 ns/op	   40185 B/op	    2001 allocs/op
+Benchmark_A-4                            	    5654	    187519 ns/op	   40408 B/op	    2002 allocs/op
+Benchmark_A-4                            	    6255	    196691 ns/op	   40660 B/op	    2002 allocs/op
+Benchmark_A-4                            	    5480	    206925 ns/op	   40870 B/op	    2003 allocs/op
+Benchmark_A-4                            	    5923	    188475 ns/op	   40428 B/op	    2002 allocs/op
+Benchmark_A-4                            	    6345	    211552 ns/op	   40993 B/op	    2003 allocs/op
+Benchmark_A-4                            	    6217	    178431 ns/op	   40231 B/op	    2001 allocs/op
 PASS
-ok  	github.com/bloxapp/ssv/operator/keys	88.524s
+ok  	github.com/bloxapp/ssv/operator/keys	90.264s
