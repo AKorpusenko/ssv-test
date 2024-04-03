@@ -3,9 +3,9 @@ DefaultAllocDelta: 0
 Packages:
   - Path: "./operator/keys"
     Tests:
-      - Name: "BenchmarkPrivKeyCache"
+      - Name: "BenchmarkPrivKeyCacheWithSyncRWMutex"
         OpDelta: 10
-      - Name: "BenchmarkPrivKeyCacheWithRWMutex"
+      - Name: "BenchmarkPrivKeyCacheSyncOnce"
         OpDelta: 10
   - Path: "./message/validation"
     Tests:

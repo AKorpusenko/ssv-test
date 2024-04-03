@@ -1,7 +1,10 @@
 package keys_test
 
 import (
+	"crypto/rand"
+	"crypto/rsa"
 	"encoding/base64"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -112,4 +115,47 @@ func TestPublicKeyFromString(t *testing.T) {
 	pubKey, err := keys.PublicKeyFromString(base64.StdEncoding.EncodeToString([]byte(sampleRSAPublicKey)))
 	require.NoError(t, err, "Failed to parse public key")
 	require.NotNil(t, pubKey, "Parsed public key is nil")
+}
+
+type A struct {
+	privKey       *rsa.PrivateKey
+	cachedPrivKey *rsa.PrivateKey
+	mu            sync.RWMutex
+}
+
+func (priv *A) checkCachePrivkey() (*rsa.PrivateKey, error) {
+	priv.mu.RLock()
+
+	if priv.cachedPrivKey != nil {
+		defer priv.mu.RUnlock()
+		return priv.cachedPrivKey, nil
+	}
+	priv.mu.RUnlock()
+
+	priv.mu.Lock()
+	defer priv.mu.Unlock()
+	priv.cachedPrivKey = priv.privKey
+
+	return priv.cachedPrivKey, nil
+}
+
+func Benchmark_A(b *testing.B) {
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	require.NoError(b, err)
+	pk := &A{key, nil, sync.RWMutex{}}
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			wg := sync.WaitGroup{}
+			wg.Add(1000)
+			for i := 0; i < 1000; i++ {
+				go func() *rsa.PrivateKey {
+					k, _ := pk.checkCachePrivkey()
+					wg.Done()
+					return k
+				}()
+			}
+			wg.Wait()
+		}
+	})
 }

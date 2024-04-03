@@ -44,9 +44,17 @@ func BenchmarkPrivKeyCacheWithSyncRWMutex(b *testing.B) {
 
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
-			key, err := pk.checkCachePrivkey()
-			require.NoError(b, err)
-			require.NotNil(b, key)
+			wg := sync.WaitGroup{}
+			wg.Add(1000)
+			for i := 0; i < 1000; i++ {
+				go func() {
+					k, _ := pk.checkCachePrivkey()
+					require.NoError(b, err)
+					require.NotNil(b, k)
+					wg.Done()
+				}()
+			}
+			wg.Wait()
 		}
 	})
 }
@@ -59,9 +67,17 @@ func BenchmarkPrivKeyCacheSyncOnce(b *testing.B) {
 
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
-			key, err := checkCachePrivkey(pk)
-			require.NoError(b, err)
-			require.NotNil(b, key)
+			wg := sync.WaitGroup{}
+			wg.Add(1000)
+			for i := 0; i < 1000; i++ {
+				go func() {
+					key, err := checkCachePrivkey(pk)
+					require.NoError(b, err)
+					require.NotNil(b, key)
+					wg.Done()
+				}()
+			}
+			wg.Wait()
 		}
 	})
 }
