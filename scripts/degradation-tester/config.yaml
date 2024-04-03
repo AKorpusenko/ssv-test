@@ -1,6 +1,12 @@
 DefaultOpDelta: 4.0
 DefaultAllocDelta: 0
 Packages:
+  - Path: "./operator/keys"
+    Tests:
+      - Name: "BenchmarkPrivKeyCache"
+        OpDelta: 10
+      - Name: "BenchmarkPrivKeyCacheWithRWMutex"
+        OpDelta: 10
   - Path: "./message/validation"
     Tests:
       - Name: "VerifyRSASignature"
