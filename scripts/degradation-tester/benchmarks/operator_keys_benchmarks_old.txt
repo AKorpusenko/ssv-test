@@ -2,16 +2,6 @@ goos: linux
 goarch: amd64
 pkg: github.com/bloxapp/ssv/operator/keys
 cpu: AMD EPYC 7763 64-Core Processor                
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     793	   1521515 ns/op	   52602 B/op	    1033 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     841	   1535512 ns/op	   54966 B/op	    1040 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     796	   1520579 ns/op	   54112 B/op	    1035 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     776	   1574797 ns/op	   55349 B/op	    1038 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     788	   1418621 ns/op	   51733 B/op	    1029 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     771	   1513121 ns/op	   54316 B/op	    1037 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     684	   1745289 ns/op	   59235 B/op	    1046 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     834	   1430125 ns/op	   51907 B/op	    1027 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     861	   1482811 ns/op	   52887 B/op	    1030 allocs/op
-BenchmarkPrivKeyCacheWithSyncRWMutex-4   	     650	   1660903 ns/op	   57447 B/op	    1044 allocs/op
 BenchmarkPrivKeyCacheSyncOnce-4          	     787	   1530286 ns/op	   38145 B/op	    1030 allocs/op
 BenchmarkPrivKeyCacheSyncOnce-4          	     854	   1382829 ns/op	   34489 B/op	    1020 allocs/op
 BenchmarkPrivKeyCacheSyncOnce-4          	     769	   1709182 ns/op	   42287 B/op	    1040 allocs/op

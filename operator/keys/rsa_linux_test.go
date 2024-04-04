@@ -98,3 +98,26 @@ func Test_Caches(t *testing.T) {
 
 	require.NoError(t, VerifyRSA(pub, msg, sig2))
 }
+
+func Test_CachesStage(t *testing.T) {
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	require.NoError(t, err)
+	msg := []byte("hello")
+	priv := &privateKeyStage{key, nil}
+	sig, err := priv.Sign(msg)
+	require.NoError(t, err)
+
+	pub := priv.Public().(*publicKeyStage)
+
+	require.NoError(t, VerifyRSAStage(pub, msg, sig))
+
+	// should sign using cache
+	require.NotNil(t, priv.cachedPrivKey)
+
+	sig2, err := priv.Sign(msg)
+	require.NoError(t, err)
+
+	require.NotNil(t, pub.cachedPubkey)
+
+	require.NoError(t, VerifyRSAStage(pub, msg, sig2))
+}
