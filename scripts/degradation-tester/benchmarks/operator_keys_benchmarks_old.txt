@@ -2,15 +2,25 @@ goos: linux
 goarch: amd64
 pkg: github.com/bloxapp/ssv/operator/keys
 cpu: AMD EPYC 7763 64-Core Processor                
-BenchmarkPrivKeyCacheSyncOnce-4          	     787	   1530286 ns/op	   38145 B/op	    1030 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     854	   1382829 ns/op	   34489 B/op	    1020 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     769	   1709182 ns/op	   42287 B/op	    1040 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     783	   1626206 ns/op	   40085 B/op	    1034 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     838	   1411830 ns/op	   34962 B/op	    1022 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     729	   1547858 ns/op	   38550 B/op	    1031 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     741	   1572889 ns/op	   39171 B/op	    1034 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     711	   1506550 ns/op	   37454 B/op	    1029 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     819	   1524043 ns/op	   37589 B/op	    1027 allocs/op
-BenchmarkPrivKeyCacheSyncOnce-4          	     814	   1457809 ns/op	   36319 B/op	    1025 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      26	  39705519 ns/op	  169213 B/op	    1332 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      33	  37932253 ns/op	  150942 B/op	    1283 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      30	  35036285 ns/op	   94277 B/op	    1144 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      33	  35168956 ns/op	   91241 B/op	    1137 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      33	  37360244 ns/op	  134835 B/op	    1242 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      33	  35478289 ns/op	   95114 B/op	    1145 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      34	  34493884 ns/op	   87336 B/op	    1125 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      30	  36574804 ns/op	  121006 B/op	    1211 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      32	  39766108 ns/op	  214255 B/op	    1442 allocs/op
+BenchmarkPrivKeyCacheSyncOnce-4   	      31	  36408738 ns/op	  125781 B/op	    1227 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      33	  36791019 ns/op	  131001 B/op	    1235 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      26	  39169383 ns/op	  186404 B/op	    1376 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      31	  33863308 ns/op	   55954 B/op	    1053 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      31	  35808699 ns/op	  119531 B/op	    1207 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      27	  41446218 ns/op	  228592 B/op	    1479 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      27	  45280059 ns/op	  273409 B/op	    1590 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      33	  34323808 ns/op	   82303 B/op	    1114 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      30	  37645914 ns/op	  149614 B/op	    1279 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      31	  34951654 ns/op	   96790 B/op	    1151 allocs/op
+BenchmarkPrivKeyNoCahce-4         	      33	  34219782 ns/op	   68479 B/op	    1079 allocs/op
 PASS
-ok  	github.com/bloxapp/ssv/operator/keys	67.249s
+ok  	github.com/bloxapp/ssv/operator/keys	66.569s

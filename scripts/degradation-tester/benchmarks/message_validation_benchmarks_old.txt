@@ -2,15 +2,15 @@ goos: linux
 goarch: amd64
 pkg: github.com/bloxapp/ssv/message/validation
 cpu: AMD EPYC 7763 64-Core Processor                
-BenchmarkVerifyRSASignature-4   	   47840	     25280 ns/op	     121 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   46532	     25268 ns/op	     134 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47569	     26068 ns/op	     150 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47770	     25616 ns/op	     165 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47398	     25253 ns/op	     177 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47596	     25744 ns/op	     194 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47361	     25784 ns/op	     210 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47113	     25321 ns/op	     221 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47454	     25555 ns/op	     238 B/op	       4 allocs/op
-BenchmarkVerifyRSASignature-4   	   47128	     25270 ns/op	     251 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   45507	     25267 ns/op	     119 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   47590	     25337 ns/op	     135 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   45856	     25603 ns/op	     150 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   47524	     25504 ns/op	     164 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   46717	     25387 ns/op	     180 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   46051	     25545 ns/op	     194 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   46548	     25706 ns/op	     208 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   47068	     25990 ns/op	     224 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   47222	     25628 ns/op	     237 B/op	       4 allocs/op
+BenchmarkVerifyRSASignature-4   	   46894	     25634 ns/op	     253 B/op	       4 allocs/op
 PASS
-ok  	github.com/bloxapp/ssv/message/validation	25.953s
+ok  	github.com/bloxapp/ssv/message/validation	25.730s
