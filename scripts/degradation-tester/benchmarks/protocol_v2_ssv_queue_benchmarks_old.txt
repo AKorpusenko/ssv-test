@@ -1,0 +1,216 @@
+goos: linux
+goarch: amd64
+pkg: github.com/bloxapp/ssv/protocol/v2/ssv/queue
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkPriorityQueue_Parallel-4         	       8	 129126623 ns/op	  196884 B/op	    4302 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,358 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,113 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 128033882 ns/op	  195512 B/op	    4291 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,423 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,251 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 127337178 ns/op	  192670 B/op	    4283 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,443 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,340 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 128346702 ns/op	  193750 B/op	    4292 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,415 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,211 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 127771412 ns/op	  192556 B/op	    4283 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,159 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,284 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 128049674 ns/op	  193458 B/op	    4292 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 15,920 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,250 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 128715763 ns/op	  192760 B/op	    4285 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,165 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,165 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 127154280 ns/op	  192822 B/op	    4286 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,361 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,363 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 129480299 ns/op	  193328 B/op	    4288 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,073 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,070 messages/sec
+BenchmarkPriorityQueue_Parallel-4         	       8	 129250911 ns/op	  193378 B/op	    4291 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,037 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,098 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128036633 ns/op	  192824 B/op	    4285 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,518 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,245 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       9	 128206313 ns/op	  192568 B/op	    4282 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,644 messages/sec
+    queue_test.go:345: popped 18,720/18,720 (0.000% loss) messages at 16,224 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128763800 ns/op	  193078 B/op	    4288 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,241 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,153 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128192153 ns/op	  192602 B/op	    4282 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,439 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,225 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       9	 127713053 ns/op	  192690 B/op	    4283 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,740 messages/sec
+    queue_test.go:345: popped 18,720/18,720 (0.000% loss) messages at 16,286 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 126916914 ns/op	  192944 B/op	    4286 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,487 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,388 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 127543704 ns/op	  192734 B/op	    4284 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,266 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,308 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128199430 ns/op	  192508 B/op	    4281 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 15,947 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,224 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128877130 ns/op	  192964 B/op	    4286 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,536 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,139 messages/sec
+BenchmarkPriorityQueue_Parallel_Lossy-4   	       8	 128610324 ns/op	  193596 B/op	    4292 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Parallel_Lossy-4
+    queue_test.go:345: popped 2,080/2,080 (0.000% loss) messages at 16,431 messages/sec
+    queue_test.go:345: popped 16,640/16,640 (0.000% loss) messages at 16,172 messages/sec
+BenchmarkPriorityQueue_Concurrent-4       	37574839	        31.51 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 295 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10056 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	37241076	        30.94 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 118 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10082 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	36773701	        31.25 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 306 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10091 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	37783869	        30.77 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 199 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10035 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	37010988	        30.84 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 116 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10012 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	38506458	        30.81 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 245 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10067 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	37672350	        31.03 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 156 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10051 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	37265293	        30.93 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 1 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 158 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10073 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	36952077	        31.18 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 150 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10036 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+BenchmarkPriorityQueue_Concurrent-4       	36783664	        31.07 ns/op	       0 B/op	       0 allocs/op
+--- BENCH: BenchmarkPriorityQueue_Concurrent-4
+    queue_test.go:412: popped 1 messages
+    queue_test.go:413: pushed 16 messages
+    queue_test.go:412: popped 100 messages
+    queue_test.go:413: pushed 155 messages
+    queue_test.go:412: popped 10000 messages
+    queue_test.go:413: pushed 10122 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+    queue_test.go:412: popped 30000 messages
+    queue_test.go:413: pushed 30000 messages
+	... [output truncated]
+PASS
+ok  	github.com/bloxapp/ssv/protocol/v2/ssv/queue	49.268s
